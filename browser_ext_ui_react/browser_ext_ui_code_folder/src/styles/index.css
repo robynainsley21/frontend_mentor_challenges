@@ -1,0 +1,216 @@
+:root {
+  --background-color: #ffffff;
+  --background-image: linear-gradient(
+    to bottom,
+    #ffffff,
+    #ffffff,
+    #ffffff,
+    #ffffff,
+    #ffffff
+  );
+  --text-color: #000000;
+  --navy: #060c22;
+  --button-hover: #e3473d;
+  --light-bg: #ebf4fb;
+}
+
+[data-theme="dark"] {
+  --background-image: linear-gradient(
+    to bottom,
+    #060c22,
+    #070f29,
+    #07112f,
+    #071436,
+    #09153d
+  );
+  --text-color: #ffffff;
+
+  body {
+    background-image: var(--background-image);
+    color: var(--text-color);
+  }
+
+  /*navigation*/
+  & #navigation {
+    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  & .theme_text {
+    color: var(--text-color);
+  }
+
+  #theme-toggle {
+    border: none;
+  }
+  /*navigation*/
+
+  /*ext parent*/
+  .filter_buttons {
+    & button {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+
+      &:hover {
+        color: var(--background-color);
+      }
+      &:active {
+        background-color: var(--navy);
+        border: 1px solid var(--text-color);
+      }
+    }
+  }
+
+  .ext_item {
+    color: var(--text-color);
+    box-shadow: rgba(6, 12, 34, 0.3) 0px 8px 24px;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  /*ext parent*/
+}
+
+body {
+  background-color: var(--light-bg);
+  color: var(--navy);
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  height: 100vh;
+}
+
+/*navigation*/
+#navigation {
+  width: 90%;
+  border-radius: 10px;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.settings_items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+img[alt="logo"] {
+  /*
+    change this is dark mode or replace the image with to have white text. 
+    dont know how you're gonna do that lol
+    */
+}
+
+#theme-toggle {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--navy);
+  color: var(--navy);
+}
+
+.theme_text {
+  color: var(--navy);
+  margin-right: 0.5rem;
+}
+/*navigation*/
+
+/* Ext Parent */
+/* header */
+.ext_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
+.filter_buttons {
+  display: flex;
+  gap: 1rem;
+
+  & button {
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    border: 1px solid var(--navy);
+    color: var(--navy);
+    background-color: var();
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: var(--button-hover);
+      color: var(--background-color);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    &:active {
+      background-color: var(--navy);
+      color: var(--background-color);
+    }
+  }
+}
+/* header */
+
+/* ext items */
+#ext_items {
+  width: 95%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.ext_item {
+  margin: auto;
+  width: 310px;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #ffffff;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.ext_item_desc {
+  display: flex;
+  align-items: top;
+  gap: 1rem;
+
+  & img {
+    margin: 0 auto;
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+  }
+}
+
+.ext_item_text {
+}
+
+/*mobile*/
+@media screen and (max-width: 768px) {
+  #ext_items {
+    gap: 1rem;
+  }
+}
+/*mobile*/
+
+/*tablet*/
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #ext_items {
+    gap: 1rem;
+  }
+}
+
+/*desktop*/
+@media screen and (min-width: 1024px) {
+  #ext_items {
+    gap: 2rem;
+  }
+}
+/*desktop*/
+/* ext items */
+/* Ext Parent */

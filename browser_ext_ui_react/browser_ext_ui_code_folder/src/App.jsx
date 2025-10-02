@@ -1,25 +1,30 @@
-import React, { useState, useEffect } from "react";
-// import './index.css'
+import { useState, useEffect } from "react";
+
+//components
+import Navigation from "./components/Navigation.jsx";
+import Ext_Parent from "./components/Ext_Parent.jsx";
 
 function App() {
   const [theme, setTheme] = useState("light");
 
   useEffect(() => {
-    const link = document.getElementById("theme-link");
-    if (link) {
-      link.href =
-        theme === "light"
-          ? "/src/assets/styles/light.css"
-          : "/src/assets/styles/dark.css";
-    }
+    document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
 
   return (
     <div>
-      <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
-        Switch to {theme === "light" ? "Dark" : "Light"} Mode
-      </button>
-      <h1>Hello {theme} mode!</h1>
+      <Navigation
+        theme={
+          <>
+            <button id="theme-toggle"
+              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            >
+              <span className="theme_text">Change theme</span> {theme === "light" ? <img src="./src/assets/images/icon-moon.svg" alt="dark-mode" /> : <img src="./src/assets/images/icon-sun.svg" alt="light-mode" />} 
+            </button>
+          </>
+        }
+      />
+      <Ext_Parent />
     </div>
   );
 }
