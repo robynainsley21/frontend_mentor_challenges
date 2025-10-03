@@ -66,6 +66,14 @@
     box-shadow: rgba(6, 12, 34, 0.3) 0px 8px 24px;
     background-color: rgba(255, 255, 255, 0.1);
   }
+
+  .ext_item_btns{
+    & #remove_btn {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  }
   /*ext parent*/
 }
 
@@ -75,7 +83,6 @@ body {
   margin: 0;
   font-family: system-ui, -apple-system, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
-  height: 100vh;
 }
 
 /*navigation*/
@@ -163,10 +170,11 @@ img[alt="logo"] {
   align-items: center;
   justify-content: center;
   margin: auto;
+      gap: 1rem;
+
 }
 
 .ext_item {
-  margin: auto;
   width: 310px;
   padding: 1rem;
   border-radius: 1rem;
@@ -188,29 +196,41 @@ img[alt="logo"] {
 }
 
 .ext_item_text {
+  margin-bottom: 1.3rem;
+  & h2 {
+    margin: 0;
+  }
+
+  & p {
+    margin: .5rem auto;
+  }
+
 }
 
-/*mobile*/
-@media screen and (max-width: 768px) {
-  #ext_items {
-    gap: 1rem;
+
+.ext_item_btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & #remove_btn{
+    background-color: transparent;
+    border-radius: 1rem;
+    color: var(--navy);
+    border: 1px solid var(--navy);
+    padding: 0.37rem 0.8rem;
   }
 }
+/*mobile*/
+
 /*mobile*/
 
 /*tablet*/
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  #ext_items {
-    gap: 1rem;
-  }
-}
+
+/*tablet*/
 
 /*desktop*/
-@media screen and (min-width: 1024px) {
-  #ext_items {
-    gap: 2rem;
-  }
-}
+
 /*desktop*/
 /* ext items */
 /* Ext Parent */

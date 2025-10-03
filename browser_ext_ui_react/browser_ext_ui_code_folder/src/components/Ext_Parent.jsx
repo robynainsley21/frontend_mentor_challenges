@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 
 //components
 import Ext_Filter from "./Ext_Filter.jsx";
+import Switch from '@mui/material/Switch';
+
+const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
 // Import all images at once using import.meta.glob
 const imageModules = import.meta.glob(
@@ -56,7 +59,14 @@ export default function Ext_Parent() {
                   <h2>{item.name}</h2>
                   <p>{item.description}</p>
                 </div>
+                
               </div>
+              <div className="ext_item_btns">
+                  <button id="remove_btn">Remove</button>
+                  {/* <button type="toggle"></button> */}
+                  <Switch {...label} defaultChecked />
+
+                </div>
             </div>
           );
         })}
