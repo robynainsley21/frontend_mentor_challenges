@@ -14,6 +14,12 @@
   --light-bg: #ebf4fb;
 }
 
+#theme-toggle:hover{
+  cursor: pointer;
+  background-color: #6AB3EB;
+     transition: all 0.3s ease;
+}
+
 [data-theme="dark"] {
   --background-image: linear-gradient(
     to bottom,
@@ -100,13 +106,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-img[alt="logo"] {
-  /*
-    change this is dark mode or replace the image with to have white text. 
-    dont know how you're gonna do that lol
-    */
 }
 
 #theme-toggle {
@@ -219,15 +218,36 @@ img[alt="logo"] {
     color: var(--navy);
     border: 1px solid var(--navy);
     padding: 0.37rem 0.8rem;
+
+    &:hover {
+      background-color: var(--button-hover);
+      color: var(--background-color);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    &:active {
+      background-color: var(--navy);
+      color: var(--background-color);
+    }
+  }
+}
+/*mobile*/
+@media screen and (max-width: 600px) {
+  .ext_header{
+    flex-direction: column;
+  }
+
+  #navigation #theme-toggle span{
+    display: none;
+
+  }
+
+  #ext_items{
+    margin-bottom: 2rem;
   }
 }
 /*mobile*/
 
-/*mobile*/
-
-/*tablet*/
-
-/*tablet*/
 
 /*desktop*/
 
