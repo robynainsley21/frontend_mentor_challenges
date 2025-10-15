@@ -175,7 +175,11 @@ body {
 
 .ext_item {
   width: 310px;
+  height: 160px;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border-radius: 1rem;
   background-color: #ffffff;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -248,9 +252,32 @@ body {
 }
 /*mobile*/
 
+/*tablet and laptop*/
+@media screen and (max-width: 1440px) {
+   #ext_items{
+    margin-bottom: 2rem;
+  }
+}
+/*tablet and laptop*/
+
 
 /*desktop*/
+@media screen and (min-width: 1440px) {
+  body{
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
 
+  /* #ext_parent{
+    height: 100%;
+    margin: 0;
+  }
+
+  #ext_items{
+    margin: 0;
+  } */
+}
 /*desktop*/
-/* ext items */
-/* Ext Parent */
+

@@ -44,7 +44,7 @@ export default function Ext_Parent() {
   }, []);
 
   return (
-    <>
+    <div id="ext_parent">
       <div className="ext_header">
         <h1>Extensions List</h1>
         <Ext_Filter data={data} />
@@ -71,6 +71,6 @@ export default function Ext_Parent() {
           );
         })}
       </div>
-    </>
+    </div>
   );
 }
